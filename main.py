@@ -16,7 +16,7 @@ def main():
             print("Nos vemos pronto :D\n")
             exit(0)
 
-        elif command == "CLASS" and len(elems)>2:
+        elif command == "CLASS" and len(elems)>1:
             my_manager.insert(elems)
 
         elif command == "DESCRIBIR" and len(elems)>1:
@@ -24,7 +24,7 @@ def main():
             if response:
                 print(response)
             else:
-                print(f"No se consiguió la clase {elems[1]}")
+                print(f"No se consiguieron métodos para {elems[1]}\n")
 
         else:
             print_help()

@@ -10,7 +10,7 @@ class MethodsManager:
             if ":" in elems[2:]:
                 if self.have(elems[3]):
                     super_class = elems[3]
-                    if len(elems) > 4:
+                    if len(elems) > 3:
                         methods = elems[4:]
                     else:
                         methods = []
@@ -23,7 +23,12 @@ class MethodsManager:
                 
             else:
                 super_class = None
-                methods = elems[2:]
+                if len(elems)>1:
+                    print("here")
+                    methods = elems[2:]
+                else:
+                    print("vacio")
+                    methods=[]
 
                 self.insert_simple(name, super_class, *methods)
                 str_methods = ' '.join(map(str, methods))

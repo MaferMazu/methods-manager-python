@@ -58,14 +58,14 @@ iii. SALIR
 
 Para salir del simulador.
 
-## :mag: For run the tests
+## :mag: Correr tests
 
 ```shell
 cd tests
 coverage3 run --source=methods_manager -m unittest test_methods_manager.py
 ```
 
-#### Coverage of the tests
+#### Coverage de los tests
 
 ```shell
 coverage3 report -m
@@ -73,4 +73,4 @@ coverage3 report -m
 
 | Module | Coverage |
 |:----:|:--:|
-| MethodsManager| 96% |
+| MethodsManager| 93% |
