@@ -17,40 +17,18 @@ def main():
             exit(0)
 
         elif command == "CLASS" and len(elems)>2:
-            if elems[1][0].isupper():
-                name = elems[1]
-                if ":" in elems[2:]:
-                    if my_manager.have(elems[3]):
-                        super_class = elems[3]
-                        if len(elems) > 4:
-                            methods = elems[4:]
-                        else:
-                            methods = []
-
-                        my_manager.insert(name, super_class, *methods)
-                        str_methods = ' '.join(map(str, methods))
-                        print(f"Se creo {name} con sus métodos {str_methods}\n")
-                    else:
-                        print(f"Error: {elems[3]} no es una clase declarada\n")
-                    
-                else:
-                    super_class = None
-                    methods = elems[2:]
-
-                    my_manager.insert(name, super_class, *methods)
-                    str_methods = ' '.join(map(str, methods))
-                    print(f"Se creo {name} con sus métodos {str_methods}\n")
-
-            else:
-                print("Error: El nombre de las clases debe ser en mayúsculas\n")
-                
+            my_manager.insert(elems)
 
         elif command == "DESCRIBIR" and len(elems)>1:
-            my_manager.search_methods(elems[1])
-            print("")
+            response=my_manager.search_methods(elems[1])
+            if response:
+                print(response)
+            else:
+                print(f"No se consiguió la clase {elems[1]}")
 
         else:
             print_help()
+            
 
 def print_help():
     """ Print help for user """
